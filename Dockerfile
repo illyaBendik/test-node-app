@@ -26,7 +26,7 @@ RUN npm install
 # Copy the rest of the app's source code to the container
 COPY --chown=nonroot:nonroot ./app /home/nonroot/app
 
-RUN chmod -R 700 /home/nonroot/app
+RUN chmod -R 750 /home/nonroot/app
 
 # Expose the port that the app will listen on
 EXPOSE 3005
