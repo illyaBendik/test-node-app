@@ -18,15 +18,15 @@ USER nonroot
 WORKDIR /home/nonroot/app
 
 # Copy package.json and package-lock.json to the container
-COPY --chown=nonroot:nonroot package*.json ./
+COPY --chown=nonroot:nonroot ./app/package*.json ./
 
 # Install app dependencies
 RUN npm install
 
 # Copy the rest of the app's source code to the container
-COPY --chown=nonroot:nonroot . /home/nonroot/app
+COPY --chown=nonroot:nonroot ./app /home/nonroot/app
 
-RUN chmod -R 755 /home/nonroot/app
+RUN chmod -R 700 /home/nonroot/app
 
 # Expose the port that the app will listen on
 EXPOSE 3005

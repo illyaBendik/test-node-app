@@ -1,0 +1,10 @@
+services:
+  test-node-2:
+    build:
+      context: .
+      args:
+        UID: ${HOST_UID}
+        GID: ${HOST_GID}
+    container_name: test-node-2
+    volumes:
+      - ./app:/home/nonroot/app
