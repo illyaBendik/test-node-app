@@ -18,7 +18,7 @@ USER nonroot
 WORKDIR /home/nonroot/app
 
 # Copy package.json and package-lock.json to the container
-COPY package*.json ./
+COPY --chown=nonroot:nonroot package*.json ./
 
 # Install app dependencies
 RUN npm install
